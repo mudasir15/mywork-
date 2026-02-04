@@ -1,0 +1,111 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Soha ❤️</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #FFC1CC, #FFEEF0);
+    text-align: center;
+    overflow: hidden;
+    animation: fadeIn 2s ease;
+  }
+  h1 {
+    font-size: 3em;
+    color: #FF3D6B;
+    animation: pulse 2s infinite;
+  }
+  p {
+    font-size: 1.2em;
+    color: #5A3E36;
+    margin: 20px;
+  }
+  button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 25px;
+    background: #FF3D6B;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  button:hover {
+    transform: scale(1.1);
+  }
+  .hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #FF3D6B;
+    transform: rotate(-45deg);
+    animation: float 5s linear infinite;
+  }
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #FF3D6B;
+    border-radius: 50%;
+  }
+  .heart::before {
+    top: -10px;
+    left: 0;
+  }
+  .heart::after {
+    left: 10px;
+    top: 0;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  @keyframes float {
+    0% { transform: translateY(100vh) rotate(-45deg); opacity: 1;}
+    100% { transform: translateY(-50px) rotate(-45deg); opacity: 0;}
+  }
+  @keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+  }
+</style>
+</head>
+<body>
+  <div class="hearts"></div>
+  <h1>For My Love, Soha ❤️</h1>
+  <p>Every moment with you is magic, and I made this surprise just for you.</p>
+  <button onclick="window.location.href='page2.html'">Open Your Surprise 🌹</button>
+
+<script>
+  // Generate floating hearts
+  const heartsContainer = document.querySelector('.hearts');
+  for(let i=0; i<30; i++){
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (3 + Math.random() * 5) + 's';
+    heart.style.width = heart.style.height = (10 + Math.random()*20) + 'px';
+    heartsContainer.appendChild(heart);
+  }
+</script>
+</body>
+</html>
